@@ -1,0 +1,642 @@
+/* ========================================
+   MARCEL ROJEWSKI - PERSONAL WEBSITE
+   Consolidated Stylesheet
+   ======================================== */
+
+/* ========================================
+   1. CSS VARIABLES & THEME
+   ======================================== */
+
+:root {
+    /* Colors - Dark Theme (Default) */
+    --text-color: #e4e6eb;
+    --text-secondary-color: #b0b3b8;
+    --text-link-color: #ffffff;
+    --background-color: #18191a;
+    --secondary-background-color: #212529;
+    --primary-color: #ffffff;
+    --secondary-color: #212529;
+    
+    /* Accent Color */
+    --accent-color: #6366f1;
+    
+    /* Spacing */
+    --section-padding: 5rem 0;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    
+    /* Shadows */
+    --card-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+    --card-shadow-hover: 0 0 11px rgba(99, 102, 241, 0.3);
+}
+
+/* ========================================
+   2. TYPOGRAPHY
+   ======================================== */
+
+body {
+    font-family: "Lora", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.primary-font {
+    font-family: "Alata", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Alata", sans-serif;
+}
+
+.section-title {
+    color: var(--text-secondary-color) !important;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   3. BASE STYLES
+   ======================================== */
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+}
+
+body {
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--text-link-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #b0b0b0;
+}
+
+::selection {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+}
+
+/* ========================================
+   4. HEADER & NAVIGATION
+   ======================================== */
+
+#header {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    transition: var(--transition-normal);
+}
+
+#header.scrolled {
+    box-shadow: var(--card-shadow);
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-size: 16px;
+    opacity: 0.95;
+    transition: var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--text-color);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ========================================
+   5. HERO SECTION
+   ======================================== */
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--section-padding);
+}
+
+#hero .subtitle {
+    font-size: clamp(14px, 5vw, 16px);
+    opacity: 0.6;
+}
+
+#hero h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    color: var(--primary-color) !important;
+}
+
+#hero h2 {
+    font-size: clamp(24px, 5vw, 40px);
+    opacity: 0.5;
+}
+
+.profile-img {
+    max-width: 450px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-normal);
+}
+
+.profile-img:hover {
+    box-shadow: var(--card-shadow-hover);
+    filter: contrast(1.1);
+    transform: translateY(-5px);
+}
+
+/* Hero Buttons */
+#hero .btn {
+    border-radius: 0.75rem;
+    padding: 0.7rem 1.75rem;
+    border: 1px solid var(--primary-color);
+    transition: var(--transition-fast);
+}
+
+#hero .btn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+#hero .btn-icon {
+    border-radius: 50%;
+    padding: 0.7rem;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   6. ABOUT SECTION
+   ======================================== */
+
+#about {
+    padding: var(--section-padding);
+}
+
+#about .lead {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.skills-list li {
+    padding: 5px 0;
+}
+
+.skills-list li i {
+    color: var(--accent-color);
+}
+
+.tech-tags .badge {
+    background-color: var(--secondary-color) !important;
+    color: var(--text-color) !important;
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: 0.5em 0.75em;
+    transition: var(--transition-fast);
+}
+
+.tech-tags .badge:hover {
+    background-color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   7. EXPERIENCE SECTION
+   ======================================== */
+
+#experience {
+    background-color: var(--secondary-background-color);
+    padding: var(--section-padding);
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary-color);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--background-color);
+    border: 3px solid var(--accent-color);
+}
+
+.timeline-content {
+    background: var(--secondary-color);
+    padding: 20px 25px;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.timeline-content .company-logo {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.timeline-header {
+    margin-bottom: 15px;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary-color) !important;
+    padding-right: 50px;
+}
+
+.timeline-company {
+    display: block;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary-color);
+    margin-top: 5px;
+}
+
+.timeline-body p {
+    margin-bottom: 10px;
+}
+
+.timeline-body ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.timeline-body li {
+    margin-bottom: 5px;
+}
+
+.timeline-tags .badge {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* ========================================
+   8. EDUCATION SECTION
+   ======================================== */
+
+#education {
+    padding: var(--section-padding);
+}
+
+.education-item {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-normal);
+}
+
+.education-item:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-5px);
+}
+
+.education-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color) !important;
+    margin-bottom: 0.5rem;
+}
+
+.education-school {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.education-date {
+    font-size: 0.875rem;
+    color: var(--text-secondary-color);
+    margin-bottom: 0;
+}
+
+.education-details ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.education-details li {
+    margin-bottom: 5px;
+}
+
+/* ========================================
+   9. PROJECTS SECTION
+   ======================================== */
+
+#projects {
+    padding: var(--section-padding);
+}
+
+.project-card {
+    background-color: var(--secondary-color) !important;
+    border: none !important;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+}
+
+.project-card .card-img-top {
+    transition: transform var(--transition-normal);
+    object-fit: cover;
+    height: 200px;
+}
+
+.project-card .card-img-top.img-bottom {
+    object-position: center bottom;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.project-tags .badge {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+    margin-right: 5px;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.project-card .card-footer {
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card .card-footer a {
+    color: var(--text-link-color);
+}
+
+.project-card .card-footer a:hover {
+    color: var(--accent-color);
+}
+
+.card-title {
+    color: var(--text-color);
+}
+
+.card-text {
+    color: var(--text-secondary-color);
+}
+
+/* ========================================
+   9. CONTACT SECTION
+   ======================================== */
+
+#contact {
+    padding: var(--section-padding);
+}
+
+#contact .social-links a {
+    color: var(--text-secondary-color);
+    transition: var(--transition-fast);
+}
+
+#contact .social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    display: inline-block;
+}
+
+/* ========================================
+   10. FOOTER
+   ======================================== */
+
+#footer {
+    background-color: var(--secondary-background-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   11. COMPONENTS
+   ======================================== */
+
+.btn-outline-light {
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.card {
+    background-color: var(--secondary-color);
+    border: none;
+}
+
+.badge {
+    font-weight: 400;
+}
+
+/* ========================================
+   12. UTILITIES
+   ======================================== */
+
+.text-primary-custom {
+    color: var(--primary-color) !important;
+}
+
+.bg-secondary-custom {
+    background-color: var(--secondary-background-color) !important;
+}
+
+/* ========================================
+   13. ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ========================================
+   14. RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 1199.98px) {
+    #hero h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--background-color);
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+    }
+    
+    #hero {
+        text-align: center;
+    }
+    
+    .profile-img {
+        max-width: 250px;
+        margin-bottom: 2rem;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-item {
+        padding-left: 40px;
+    }
+    
+    .timeline-marker {
+        left: 2px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    :root {
+        --section-padding: 3rem 0;
+    }
+    
+    #hero h1 {
+        font-size: 48px;
+    }
+    
+    #hero h2 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #hero h1 {
+        font-size: 36px;
+    }
+    
+    .profile-img {
+        max-width: 200px;
+    }
+}
